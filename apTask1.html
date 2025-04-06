@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(240, 250, 215);
+            color: beige;
+        }
+        header{
+            background-color: rgb(0, 204, 255);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section{
+            background-color: rgba(90, 138, 201, 0.532);
+            color: rgba(12, 1, 1, 0.815);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgb(0, 0,0,0.1);
+        }
+        h1,h2{
+            color: black;
+        }
+        footer{
+            text-align: center;
+            margin-top: 30px;
+        }
+        button{
+            background-color: aquamarine;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: small;
+            cursor: pointer;
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Task One</h1>
+    </header>
+    <section>
+        <h2>About Me</h2>
+        <p>Hi,I am Jashmitha C M from coorg ,corrently perseving my masters in computer application in Banglore Presidency university</p>
+        <p>Enjoy the beauty of the sunset here in this page</p><center>
+        <img src="C:\Users\HP\Pictures\sunset.jpg" alt="sunset image">
+    </center>
+    </section>
+    <section>
+        <h2>Example for link</h2>
+        <p>Check out the following link to <a href="https://www.facebook.com" target="_blank"></p>
+        </section>
+    <footer>
+        <button id="alertbtn"> Click me</button>
+    </footer>
+    <script>
+        document.getElementById('alertbtn').addEventListener('click',function(){
+            alert('hi,the button is clicked');
+        }
+    );
+    </script>
+    
+</body>
+</html>
