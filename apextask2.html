@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+            background-color: antiquewhite;
+        }
+        .container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-container, .list-container{
+            flex: 1;
+            min-width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(3,3,3,0);
+        }
+        input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .todo-list, .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .todo-item, .image-item {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .todo-item button, .image-item button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: #f44336;
+    }
+
+    @media screen and (max-width: 700px) 
+    {
+        .container{
+            flex-direction: column;
+        }
+    }
+
+   
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="myForm">
+                <h2>Form Validation</h2>
+                <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br>
+                <textarea id="message" name="message" placeholder="Message" aria-rowspan="4" required></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <!--To do list and imag e gallery in another container-->
+        <div class="list-container">
+            <div>
+                <h2>To-Do-List</h2>
+                <input type="text" id="todoInput" placeholder="Add something new to do">
+                <button onclick="addTodo()">Add to-Do</button>
+                <div class="todo-list" id="todoList"></div>
+            </div>
+            <div>
+                <h2>Image Galary</h2>
+                <input type="url" id="imageUrl" placeholder="Add Image Url">
+                <button onclick="addImage()">Add Image url</button>
+                <div class="image-gallery" id="imageGallery"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('myForm');
+        form.addEventListener('submit',function(event){
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message){
+                alert('Please fill all the feilds');
+            }
+            alert('Form submitted successfully');
+            form.reset();
+
+        });
+
+        //to do list and imagr gallery script
+        function addTodo() {
+      const todoInput = document.getElementById('todoInput');
+      const todoText = todoInput.value.trim();
+      if (todoText) {
+        const todoList = document.getElementById('todoList');
+        const todoItem = document.createElement('div');
+        todoItem.classList.add('todo-item');
+        todoItem.innerHTML = `${todoText} <button onclick="removeItem(this)">Remove</button>`;
+        todoList.appendChild(todoItem);
+        todoInput.value = '';
+      }
+    }
+
+         function addImage() {
+      const imageUrl = document.getElementById('imageUrl').value.trim();
+      if (imageUrl) {
+        const imageGallery = document.getElementById('imageGallery');
+        const imageItem = document.createElement('div');
+        imageItem.classList.add('image-item');
+        imageItem.innerHTML = `<img src="${imageUrl}" alt="Image" style="width: 100%; height: auto;"> 
+                               <button onclick="removeItem(this)">Remove</button>`;
+        imageGallery.appendChild(imageItem);
+        document.getElementById('imageUrl').value = '';
+      }
+    }
+
+    // Remove Item Functionality
+    function removeItem(button) {
+      button.parentElement.remove();
+    }
+
+
+    </script>
+    
+</body>
+</html>
