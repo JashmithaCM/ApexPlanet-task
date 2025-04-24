@@ -1,0 +1,50 @@
+<DOCTYPE html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Web page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+          
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .quiz-box {
+      background: white;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .option-btn {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: #008cba;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .option-btn:hover {
+      background: #005f5f;
+    }
+    </style>
+    <body>
+        <h1>This is my interactive web page</h1>
+        <div class="quiz-box">
+            
+                <p id="question">Loading questions</p>
+                    <div id="options"> </div>
+                    
+        </div>
+        <script src="script.js"></script>
+        
+    </body>
+    </html>
