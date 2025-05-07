@@ -1,50 +1,55 @@
-<DOCTYPE html>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Responsive Web page</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <style>
-          
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      text-align: center;
-      padding-top: 50px;
-    }
-    .quiz-box {
-      background: white;
-      display: inline-block;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    .option-btn {
-      display: block;
-      margin: 10px auto;
-      padding: 10px 20px;
-      background: #008cba;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .option-btn:hover {
-      background: #005f5f;
-    }
-    </style>
-    <body>
-        <h1>This is my interactive web page</h1>
-        <div class="quiz-box">
-            
-                <p id="question">Loading questions</p>
-                    <div id="options"> </div>
-                    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="stylee.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header class="head">
+      <nav class="navbar">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
         </div>
-        <script src="script.js"></script>
-        
-    </body>
-    </html>
+        <h1 class="site-title">Welcome to My Portfolio</h1>
+      </nav>
+      <div class="image-container">
+        <img src="C:\Users\HP\Pictures\gif1.gif" alt="Portfolio Art" width="150" height="150">
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="intro">
+        <h2>Hello, I'm Jashmitha C M</h2>
+        <p>I’m an artist. I love sketching animals and flowers from scratch.<br>
+        I was never trained professionally, but I learned it myself.</p>
+      </section>
+
+      <!-- Image grid placeholder -->
+      <section class="gallery">
+        <h3>My Sketches</h3>
+        <div class="grid">
+          <!-- You can place images here -->
+          <img src="C:\Users\HP\Pictures\art1.jpeg" alt="Art 1">
+          <img src="C:\Users\HP\Pictures\art2.jpeg" alt="Art 2">
+          <img src="C:\Users\HP\Pictures\art3.jpeg" alt="Art 3">
+          <img src="C:\Users\HP\Pictures\art4.jpeg" alt="Art 4">
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <button><a href="todo.html" target="_blank">Open To-Do List App</a>
+        </button>
+      <p>&copy; 2025 Jashmitha C M</p>
+    </footer>
+  </div>
+
+</body>
+</html>
